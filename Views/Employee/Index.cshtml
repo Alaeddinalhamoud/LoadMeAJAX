@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/loadme.css" rel="stylesheet" />
+@{
+    var options = new AjaxOptions()
+    {
+        UpdateTargetId = "DivContent",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "Get",
+        OnBegin = "onLoadBegin",
+        OnSuccess = "onLoadSuccess"
+    };
+
+}
+
+@Ajax.ActionLink("Employees", "GetEmployees", "Employee", options);
+
+<hr/>
+
+<div id="DivContent">
+    Your PartialView Will be here. 
+</div>
+
+
+<div id="divLoading" style="display:none">
+    <div class="loadmeRect">
+        <div class="loadmeRectChild loadmeRect1"></div>
+        <div class="loadmeRectChild loadmeRect2"></div>
+        <div class="loadmeRectChild loadmeRect3"></div>
+        <div class="loadmeRectChild loadmeRect4"></div>
+        <div class="loadmeRectChild loadmeRect5"></div>
+    </div>
+    <div class="loadme-mask"></div>
+</div>
+
