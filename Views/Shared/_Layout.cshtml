@@ -7,9 +7,21 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/Loadme")
     @Scripts.Render("~/bundles/modernizr")
-   
+  
 </head>
 <body>
+     <div id="Loading">
+           
+       
+            <div class="loadmeRect">
+                <div class="loadmeRectChild loadmeRect1"></div>
+                <div class="loadmeRectChild loadmeRect2"></div>
+                <div class="loadmeRectChild loadmeRect3"></div>
+                <div class="loadmeRectChild loadmeRect4"></div>
+                <div class="loadmeRectChild loadmeRect5"></div>
+            </div>
+            <div class="loadme-mask"></div>
+        </div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -24,13 +36,14 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Employees", "Index", "Employee")</li>
-                   
+                  
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
+       
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -42,5 +55,12 @@
     @Scripts.Render("~/bundles/AJAX")
     @Scripts.Render("~/bundles/LoadMeAJAX")
     @RenderSection("scripts", required: false)
+
+    <script >
+        $(document).ready(function () {
+            $("#Loading").hide();
+          
+        });
+    </script>
 </body>
 </html>
